@@ -1,5 +1,5 @@
 # 줄바꿈이 LF인지 확인할것.
-# sudo chmod 777 mpup_setup.sh && sh mpup_setup.sh
+# sudo chmod 777 MediaPipeUnityPluginLinuxInstaller.sh && sh MediaPipeUnityPluginLinuxInstaller.sh
 
 # 기본 디렉토리에서 시작하는것을 전제로 함.
 cd $HOME
