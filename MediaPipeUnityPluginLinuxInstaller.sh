@@ -11,10 +11,7 @@ curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
 #apt 업데이트
 sudo apt update && sudo apt upgrade -y
 # 필요한 라이브러리 설치 - 패키지 매니저, 빌드시스템과 JDK, 기타 라이브러리들
-sudo apt install -y python3-pip python-is-python3 nodejs gcc g++ make cmake ninja-build wget unzip build-essential git zip adb openjdk-8-jdk openjdk-8-jre-headless
-
-# mono와 nuget 설치 중요하니 따로 뺐다.
-sudo apt install -y mono-devel nuget
+sudo apt install -y python3-pip python-is-python3 nodejs gcc g++ make cmake ninja-build wget unzip build-essential git zip adb openjdk-8-jdk openjdk-8-jre-headless mono-devel nuget
 sudo nuget update -self
 
 #opencv
