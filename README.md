@@ -1,7 +1,7 @@
 # MediaPipeUnityPluginLinuxInstaller
 
 Environment setting shell script to build [MediaPipeUnityPlugin](https://github.com/homuler/MediaPipeUnityPlugin) in Linux.
-Tested on Ubuntu 20.04.
+Tested on WSL Ubuntu 20.04.
 
 # how to install?
 paste and run it:
