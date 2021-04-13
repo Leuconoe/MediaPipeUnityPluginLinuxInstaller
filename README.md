@@ -14,4 +14,4 @@ Since it is only a script to build MediaPipeUnityPlugin, if wsl is already used 
 
 # credits
 
-Thanks to @homuler.
+Thanks to @homuler
