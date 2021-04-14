@@ -47,6 +47,7 @@ export ANDROID_NDK_HOME=$HOME/Android/Ndk/android-ndk-r21b
 #레파지토리 복사
 git clone https://github.com/homuler/MediaPipeUnityPlugin.git
 cd MediaPipeUnityPlugin
+#git checkout (git describe --tags `git rev-list --tags --max-count=1`) -b latest
 
 #내장된 라이브러리에 BooleanOptionalAction이 없다는 오류가 계속 나서 그 이슈 처리
 wget --no-clobber https://raw.githubusercontent.com/python/cpython/master/Lib/argparse.py 
