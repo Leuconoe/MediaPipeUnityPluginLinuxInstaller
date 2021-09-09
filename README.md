@@ -6,7 +6,7 @@ Tested on v0.5.1 && WSL Ubuntu 20.04.
 # how to install?
 paste and run it:
 
-cd $home && sudo apt install wget && wget https://raw.githubusercontent.com/Leuconoe/MediaPipeUnityPluginLinuxInstaller/main/MediaPipeUnityPluginLinuxInstaller.sh && sudo chmod 777 MediaPipeUnityPluginLinuxInstaller.sh && sh MediaPipeUnityPluginLinuxInstaller.sh
+cd $home && curl -O https://raw.githubusercontent.com/Leuconoe/MediaPipeUnityPluginLinuxInstaller/main/MPUPInstaller.sh && sudo chmod 777 MPUPInstaller.sh && sh MPUPInstaller.sh
 
 # caution
 
