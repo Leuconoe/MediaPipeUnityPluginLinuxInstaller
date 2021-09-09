@@ -7,7 +7,7 @@ cd $HOME
 # 사전 준비
 ####################
 # nodejs 설치를 위한 경로 추가
-curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 #apt 업데이트
 sudo apt update && sudo apt upgrade -y
 # 필요한 라이브러리 설치 - 패키지 매니저, 빌드시스템과 JDK, 기타 라이브러리들
