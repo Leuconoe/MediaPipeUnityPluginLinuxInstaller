@@ -39,6 +39,8 @@ sudo npm install -g @bazel/bazelisk
 #ADK & NDK 설치 스크립트
 wget --no-clobber https://raw.githubusercontent.com/google/mediapipe/master/setup_android_sdk_and_ndk.sh
 bash setup_android_sdk_and_ndk.sh  ~/Android/Sdk ~/Android/Ndk r21b
+sh Android/Sdk/tools/bin/sdkmanager "build-tools;31" "platform-tools" "platforms;android-31"
+#sh Android/Sdk/tools/bin/sdkmanager "build-tools" "platform-tools" "platforms"
 
 #환경변수
 echo "************env_val************"
