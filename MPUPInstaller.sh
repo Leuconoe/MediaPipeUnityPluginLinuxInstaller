@@ -5,6 +5,7 @@
 cd $HOME
 ####################
 # 사전 준비
+echo "************initalize************"
 ####################
 # nodejs 설치를 위한 경로 추가
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
@@ -15,6 +16,7 @@ sudo apt install -y python3-pip python-is-python3 nodejs gcc g++ make cmake ninj
 sudo nuget update -self
 
 #opencv
+echo "************opencv************"
 #apt나 pip로 설치할경우 헤더파일을 못찾는 문제가 있으니 직접 빌드한다.
 ###4로 하면 빌드 스크립트의 경로를 수정해야하니 기본값인 3으로.
 wget --no-clobber -O opencv.zip https://github.com/opencv/opencv/archive/refs/tags/3.4.14.zip
@@ -29,6 +31,7 @@ echo "opencv build finish"
 cd $HOME
 
 # 파이썬 라이브러리 설치
+echo "************python************"
 pip3 install -U numpy
 # bazel 관리하는 bazelisk 설치
 sudo npm install -g @bazel/bazelisk
@@ -38,6 +41,7 @@ wget --no-clobber https://raw.githubusercontent.com/google/mediapipe/master/setu
 bash setup_android_sdk_and_ndk.sh  ~/Android/Sdk ~/Android/Ndk r21b
 
 #환경변수
+echo "************env_val************"
 # setup_android_sdk_and_ndk.sh 의 echo "Set android_ndk_repository and android_sdk_repository in WORKSPACE"
 #이하부터 오류가 나는데 아직 해결을 못함.
 # sudo vi ~./bashrc
@@ -45,6 +49,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_NDK_HOME=$HOME/Android/Ndk/android-ndk-r21b
 
 #레파지토리 복사
+echo "************git clone************"
 git clone https://github.com/homuler/MediaPipeUnityPlugin.git
 cd MediaPipeUnityPlugin
 #git checkout (git describe --tags `git rev-list --tags --max-count=1`) -b latest
@@ -52,7 +57,10 @@ cd MediaPipeUnityPlugin
 #내장된 라이브러리에 BooleanOptionalAction이 없다는 오류가 계속 나서 그 이슈 처리
 wget --no-clobber https://raw.githubusercontent.com/python/cpython/master/Lib/argparse.py 
 
+echo "************apt update************"
 sudo apt update && sudo apt upgrade -y
 
+
 #빌드
+echo "************build************"
 python build.py build --desktop cpu --android arm64 -v
