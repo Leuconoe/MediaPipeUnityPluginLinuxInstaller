@@ -15,6 +15,17 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y python3-pip python-is-python3 nodejs gcc g++ make cmake ninja-build wget unzip build-essential git zip adb openjdk-8-jdk openjdk-8-jre-headless mono-devel nuget
 sudo nuget update -self
 
+#install python 3.9
+echo "************install python 3.9************"
+sudo apt update && sudo apt upgrade && sudo apt dist-upgrade
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
+tar -xvzf Python-3.9.1.tgz
+cd Python-3.9.1
+./configure
+sudo make altinstall
+cd ..
+
 #opencv
 echo "************opencv************"
 #apt나 pip로 설치할경우 헤더파일을 못찾는 문제가 있으니 직접 빌드한다.
