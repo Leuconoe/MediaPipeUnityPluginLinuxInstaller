@@ -1,3 +1,4 @@
+#!bin/bash
 # 줄바꿈이 LF인지 확인할것.
 # sudo chmod 777 MediaPipeUnityPluginLinuxInstaller.sh && sh MediaPipeUnityPluginLinuxInstaller.sh
 
