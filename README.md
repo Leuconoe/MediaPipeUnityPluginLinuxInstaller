@@ -1,6 +1,7 @@
 # MediaPipeUnityPluginLinuxInstaller
 
 Environment setting shell script to build [MediaPipeUnityPlugin](https://github.com/homuler/MediaPipeUnityPlugin) in Linux.
+
 This is a script created for environments where wsl 2 & docker cannot be used. (ex. using Android emulator)
 Tested on v0.7.0 && WSL Ubuntu 20.04.
 
