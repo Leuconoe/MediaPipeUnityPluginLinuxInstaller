@@ -20,7 +20,7 @@ echo "************install python 3.9************"
 #만약 Could not read response to hello message from hook 어쩌구 하는 메시지가 나오면
 #sudo rm -rf /etc/apt/apt.conf.d/20snapd.conf
 #anaconda에서 3.9 사용하는법은 https://ieworld.tistory.com/21
-sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
 wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
 tar -xvzf Python-3.9.1.tgz
 cd Python-3.9.1
