@@ -27,8 +27,8 @@ then
   then
     wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
     tar -xvzf Python-3.9.1.tgz
-    cd Python-3.9.1 && ./configure && sudo make altinstall
   fi
+  cd Python-3.9.1 && ./configure && sudo make altinstall
 else
  echo "************skip : python 3.9 ************"
 fi
