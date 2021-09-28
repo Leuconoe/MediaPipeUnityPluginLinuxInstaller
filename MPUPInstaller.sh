@@ -47,8 +47,7 @@ echo "************env_val************"
 # setup_android_sdk_and_ndk.sh 의 echo "Set android_ndk_repository and android_sdk_repository in WORKSPACE"
 #이하부터 오류가 나는데 아직 해결을 못함.
 # sudo vi ~./bashrc
-export ANDROID_HOME=$HOME/Android/Sdk
-export ANDROID_NDK_HOME=$HOME/Android/Ndk/android-ndk-r21b
+export ANDROID_HOME=$HOME/Android/Sdk && export ANDROID_NDK_HOME=$HOME/Android/Ndk/android-ndk-r21b
 
 #레파지토리 복사
 echo "************git clone************"
