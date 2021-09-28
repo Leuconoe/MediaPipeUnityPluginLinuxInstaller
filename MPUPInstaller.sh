@@ -27,9 +27,8 @@ tar -xvzf Python-3.9.1.tgz
 cd Python-3.9.1 && ./configure && sudo make altinstall
 cd $HOME
 
-return
-#opencv
 
+#opencv
 #apt나 pip로 설치할경우 헤더파일을 못찾는 문제가 있으니 직접 빌드한다.
 ###4로 하면 빌드 스크립트의 경로를 수정해야하니 기본값인 3으로.
 echo "************opencv************"
@@ -52,7 +51,7 @@ pip3 install -U numpy
 sudo npm install -g @bazel/bazelisk
 
 #ADK & NDK 설치 스크립트
-if [ ! -d "opencv" ];
+if [ ! -d "Android" ];
 then
   wget --no-clobber https://raw.githubusercontent.com/google/mediapipe/master/setup_android_sdk_and_ndk.sh
 fi
