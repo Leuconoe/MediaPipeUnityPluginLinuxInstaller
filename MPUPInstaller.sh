@@ -1,4 +1,3 @@
-#!bin/bash
 # 줄바꿈이 LF인지 확인할것.
 # sudo chmod 777 MediaPipeUnityPluginLinuxInstaller.sh && sh MediaPipeUnityPluginLinuxInstaller.sh
 
@@ -26,9 +25,11 @@ then
   sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
   if [ ! -d "Python-3.9.1" ];
   then
+  echo "************download : python 3.9************"
     wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
     tar -xvzf Python-3.9.1.tgz
   fi
+  echo "************compile : python 3.9************"
   cd Python-3.9.1 && ./configure && sudo make altinstall
 else
  echo "************skip : python 3.9 ************"
