@@ -21,17 +21,21 @@ echo "************install python 3.9************"
 #sudo rm -rf /etc/apt/apt.conf.d/20snapd.conf
 #anaconda에서 3.9 사용하는법은 https://ieworld.tistory.com/21
 sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+if [ ! -d "Python-3.9.1" ];
 wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
 tar -xvzf Python-3.9.1.tgz
 cd Python-3.9.1
 ./configure
 sudo make altinstall
-cd ..
+fi
+cd $HOME
+
 
 #opencv
 echo "************opencv************"
 #apt나 pip로 설치할경우 헤더파일을 못찾는 문제가 있으니 직접 빌드한다.
 ###4로 하면 빌드 스크립트의 경로를 수정해야하니 기본값인 3으로.
+if [ ! -d "opencv" ];
 wget --no-clobber -O opencv.zip https://github.com/opencv/opencv/archive/refs/tags/3.4.14.zip
 unzip -n opencv.zip
 mv opencv-3.4.14 opencv
@@ -40,8 +44,10 @@ mkdir -p build && cd build
 cmake -GNinja ../opencv
 ninja && sudo ninja install
 echo "opencv build finish"
+fi
 #종료시 기본 폴더로
 cd $HOME
+
 
 # 파이썬 라이브러리 설치
 echo "************python************"
@@ -50,10 +56,12 @@ pip3 install -U numpy
 sudo npm install -g @bazel/bazelisk
 
 #ADK & NDK 설치 스크립트
+if [ ! -d "opencv" ];
 wget --no-clobber https://raw.githubusercontent.com/google/mediapipe/master/setup_android_sdk_and_ndk.sh
 bash setup_android_sdk_and_ndk.sh  ~/Android/Sdk ~/Android/Ndk r21b
 sh Android/Sdk/tools/bin/sdkmanager "build-tools;30.0.0" "platform-tools" "platforms;android-30"
 #sh Android/Sdk/tools/bin/sdkmanager "build-tools" "platform-tools" "platforms"
+fi
 
 #환경변수
 echo "************env_val************"
