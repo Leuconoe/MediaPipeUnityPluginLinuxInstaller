@@ -32,9 +32,9 @@ cd $HOME
 #apt나 pip로 설치할경우 헤더파일을 못찾는 문제가 있으니 직접 빌드한다.
 ###4로 하면 빌드 스크립트의 경로를 수정해야하니 기본값인 3으로.
 echo "************opencv************"
-wget --no-clobber -O opencv.zip https://github.com/opencv/opencv/archive/refs/tags/3.4.14.zip
+wget --no-clobber -O opencv.zip https://github.com/opencv/opencv/archive/refs/tags/3.4.10.zip
 unzip -n opencv.zip
-mv opencv-3.4.14 opencv
+mv opencv-3.4.10 opencv
 mkdir -p build && cd build
 # 닌자가 멀티코어를 기본 지원한대서 닌자로
 cmake -GNinja ../opencv
