@@ -34,7 +34,7 @@ else
 fi
 cd $HOME
 
-
+return
 #opencv
 
 #apt나 pip로 설치할경우 헤더파일을 못찾는 문제가 있으니 직접 빌드한다.
