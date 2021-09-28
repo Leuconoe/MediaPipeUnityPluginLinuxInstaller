@@ -19,21 +19,12 @@ sudo nuget update -self
 #만약 Could not read response to hello message from hook 어쩌구 하는 메시지가 나오면
 #sudo rm -rf /etc/apt/apt.conf.d/20snapd.conf
 #anaconda에서 3.9 사용하는법은 https://ieworld.tistory.com/21
-if ! command -v python3.9 &> /dev/null
-then
-  echo "************install : python 3.9************"
-  sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
-  if [ ! -d "Python-3.9.1" ];
-  then
-  echo "************download : python 3.9************"
-    wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
-    tar -xvzf Python-3.9.1.tgz
-  fi
-  echo "************compile : python 3.9************"
-  cd Python-3.9.1 && ./configure && sudo make altinstall
-else
- echo "************skip : python 3.9 ************"
-fi
+#명령어가 있으면 안돌아가야 하는데...
+# if ! command -v python3.9 &> /dev/null
+sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
+wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
+tar -xvzf Python-3.9.1.tgz
+cd Python-3.9.1 && ./configure && sudo make altinstall
 cd $HOME
 
 return
