@@ -16,12 +16,12 @@ sudo apt install -y python3-pip python-is-python3 nodejs gcc g++ make cmake ninj
 sudo nuget update -self
 
 #install python 3.9
-echo "************install python 3.9************"
 #만약 Could not read response to hello message from hook 어쩌구 하는 메시지가 나오면
 #sudo rm -rf /etc/apt/apt.conf.d/20snapd.conf
 #anaconda에서 3.9 사용하는법은 https://ieworld.tistory.com/21
 if ! command -v python3.9 &> /dev/null
 then
+  echo "************install : python 3.9************"
   sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
   if [ ! -d "Python-3.9.1" ];
   then
@@ -29,25 +29,25 @@ then
     tar -xvzf Python-3.9.1.tgz
     cd Python-3.9.1 && ./configure && sudo make altinstall
   fi
+else
+ echo "************skip : python 3.9 ************"
 fi
 cd $HOME
 
 
 #opencv
-echo "************opencv************"
+
 #apt나 pip로 설치할경우 헤더파일을 못찾는 문제가 있으니 직접 빌드한다.
 ###4로 하면 빌드 스크립트의 경로를 수정해야하니 기본값인 3으로.
-if [ ! -d "opencv" ];
-then
-  wget --no-clobber -O opencv.zip https://github.com/opencv/opencv/archive/refs/tags/3.4.14.zip
-  unzip -n opencv.zip
-  mv opencv-3.4.14 opencv
-  mkdir -p build && cd build
-  # 닌자가 멀티코어를 기본 지원한대서 닌자로
-  cmake -GNinja ../opencv
-  ninja && sudo ninja install
-  echo "opencv build finish"
-fi
+echo "************opencv************"
+wget --no-clobber -O opencv.zip https://github.com/opencv/opencv/archive/refs/tags/3.4.14.zip
+unzip -n opencv.zip
+mv opencv-3.4.14 opencv
+mkdir -p build && cd build
+# 닌자가 멀티코어를 기본 지원한대서 닌자로
+cmake -GNinja ../opencv
+ninja && sudo ninja install
+echo "opencv build finish"
 #종료시 기본 폴더로
 cd $HOME
 
@@ -62,10 +62,11 @@ sudo npm install -g @bazel/bazelisk
 if [ ! -d "opencv" ];
 then
   wget --no-clobber https://raw.githubusercontent.com/google/mediapipe/master/setup_android_sdk_and_ndk.sh
-  bash setup_android_sdk_and_ndk.sh  ~/Android/Sdk ~/Android/Ndk r21b
-  sh Android/Sdk/tools/bin/sdkmanager "build-tools;30.0.0" "platform-tools" "platforms;android-30"
-  #sh Android/Sdk/tools/bin/sdkmanager "build-tools" "platform-tools" "platforms"
 fi
+bash setup_android_sdk_and_ndk.sh  ~/Android/Sdk ~/Android/Ndk r21b
+sh Android/Sdk/tools/bin/sdkmanager "build-tools;30.0.0" "platform-tools" "platforms;android-30"
+#sh Android/Sdk/tools/bin/sdkmanager "build-tools" "platform-tools" "platforms"
+
 
 #환경변수
 echo "************env_val************"
