@@ -10,14 +10,16 @@ echo "************initalize************"
 # nodejs 설치를 위한 경로 추가
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 #apt 업데이트
-sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade
 # 필요한 라이브러리 설치 - 패키지 매니저, 빌드시스템과 JDK, 기타 라이브러리들
 sudo apt install -y python3-pip python-is-python3 nodejs gcc g++ make cmake ninja-build wget unzip build-essential git zip adb openjdk-8-jdk openjdk-8-jre-headless mono-devel nuget
 sudo nuget update -self
 
 #install python 3.9
 echo "************install python 3.9************"
-sudo apt update && sudo apt upgrade && sudo apt dist-upgrade
+#만약 Could not read response to hello message from hook 어쩌구 하는 메시지가 나오면
+#sudo rm -rf /etc/apt/apt.conf.d/20snapd.conf
+#anaconda에서 3.9 사용하는법은 https://ieworld.tistory.com/21
 sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
 wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
 tar -xvzf Python-3.9.1.tgz
@@ -75,4 +77,4 @@ sudo apt update && sudo apt upgrade -y
 
 #빌드
 echo "************build************"
-python build.py build --desktop cpu --android arm64 -v
+python3.9 build.py build --desktop cpu --android arm64 -v
